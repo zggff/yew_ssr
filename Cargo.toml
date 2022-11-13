@@ -1,0 +1,39 @@
+[package]
+name = "yew_app"
+version = "0.1.0"
+edition = "2021"
+default-run = "server"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[dependencies]
+log = "0.4.17"
+serde = { version = "1", features = ["derive"] }
+yew-router = { git = "https://github.com/yewstack/yew.git" } 
+
+
+# frontend dependencies
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+yew = { git = "https://github.com/yewstack/yew/", features = ["csr", "hydration"] }
+wasm-bindgen-futures = "0.4"
+wasm-logger = "0.2"
+
+
+# backend dependencies
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+yew = { git = "https://github.com/yewstack/yew/", features = ["csr", "ssr"] }
+actix-cors = "0.6.3"
+actix-files = "0.6.2"
+actix-web = { version = "4.2.1", features = ["rustls"] }
+actix-service = "2.0.2"
+
+rustls = "0.20.7"
+rustls-pemfile = "1"
+
+anyhow = "1.0.66"
+env_logger = "0.9.1"
+futures-util = "0.3.25"
+once_cell = "1.16.0"
+dotenv = "0.15.0"
+
