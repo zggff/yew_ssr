@@ -1,6 +1,14 @@
 [build]
-# public_url = "dist/"
+
+[watch]
+ignore = ["./styles/output.css"]
 
 [[proxy]]
 backend = "http://localhost:3000/api/"
 insecure = true
+
+
+[[hooks]]
+# this is in pre_build so that the site reloads only once
+stage = "pre_build"
+command ="./tailwind.sh"

@@ -1,3 +1,4 @@
 /target
 dist
 .env
+styles/output.css
