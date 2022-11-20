@@ -1,12 +1,9 @@
 use actix_cors::Cors;
 use actix_web::HttpRequest;
 use actix_web::{middleware, web, App, HttpResponse, HttpServer, Responder};
-use once_cell::sync::OnceCell;
 use std::error::Error;
 use std::fs;
 mod cache;
-
-static STATIC_DIRECTORY: OnceCell<String> = OnceCell::new();
 
 #[actix_web::get("{tail}*")]
 async fn render_yew_app(req: HttpRequest) -> impl Responder {

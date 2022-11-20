@@ -26,14 +26,14 @@ fn secure() -> Html {
     html! {
         <div>
             <h1>{ "Secure" }</h1>
-            <button class="bg-blue-200 w-full mt-4 p-2 mx-4 rounded" {onclick}>{ "Go Home" }</button>
+            <button class="btn-blue w-full" {onclick}>{ "Go Home" }</button>
         </div>
     }
 }
 
 fn switch(routes: Route) -> Html {
     match routes {
-        Route::Home => html! { <h1 class="text-center bg-blue-200">{ "Home" }</h1> },
+        Route::Home => html! { <h1 >{ "Home page" }</h1> },
         Route::Secure => html! {
             <Secure />
         },
