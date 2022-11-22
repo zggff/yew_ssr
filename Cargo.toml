@@ -5,6 +5,18 @@ edition = "2021"
 default-run = "server"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+name = "client"
+path = "./src/client/lib.rs"
+
+[[bin]]
+name = "server"
+path = "./src/server/server.rs"
+
+[[bin]]
+name = "hydrate"
+path = "./src/client/hydrate.rs"
+
 
 [dependencies]
 log = "0.4.17"

@@ -9,10 +9,10 @@ mod cache;
 async fn render_yew_app(req: HttpRequest) -> impl Responder {
     log::debug!("{:?}", req);
     let index_html_fs = fs::read_to_string("./dist/index.html").unwrap();
-    let props = yew_app::ServerAppProps {
+    let props = client::ServerAppProps {
         url: req.uri().to_string().into(),
     };
-    let content = yew::ServerRenderer::<yew_app::ServerApp>::with_props(move || props)
+    let content = yew::ServerRenderer::<client::ServerApp>::with_props(move || props)
         .render()
         .await;
 
