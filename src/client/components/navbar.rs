@@ -9,5 +9,5 @@ pub fn navbar() -> Html {
             <Link<Route> to={Route::Home} classes="btn-blue">{"home"}</Link<Route>>
             <Link<Route> to={Route::Secure} classes="btn-blue">{"secure"}</Link<Route>>
         </div>
-    );
+    )
 }
