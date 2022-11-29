@@ -64,16 +64,16 @@ pub fn app() -> Html {
 
 #[derive(Properties, PartialEq, Eq, Debug)]
 pub struct ServerAppProps {
-    pub url: String,
+    pub url: AttrValue,
 }
 
 #[function_component(ServerApp)]
 pub fn server_app(props: &ServerAppProps) -> Html {
     let history = AnyHistory::from(MemoryHistory::new());
     history.push(&*props.url);
-    return html!(
+    html!(
             <Router history={history}>
                 <Layout/>
             </Router>
-    );
+    )
 }
