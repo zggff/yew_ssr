@@ -3,7 +3,7 @@ name = "yew_app"
 version = "0.1.0"
 edition = "2021"
 default-run = "server"
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+# see more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
 name = "client"
@@ -19,6 +19,8 @@ path = "./src/client/hydrate.rs"
 
 
 [dependencies]
+futures = "0.3.25"
+futures-util = "0.3.25"
 log = "0.4.17"
 serde = { version = "1", features = ["derive"] }
 yew-router = { git = "https://github.com/yewstack/yew.git" } 
@@ -33,15 +35,18 @@ wasm-logger = "0.2"
 
 # backend dependencies
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-yew = { git = "https://github.com/yewstack/yew/", features = ["csr", "ssr"] }
-actix-cors = "0.6.3"
-actix-files = "0.6.2"
-actix-web = "4.2.1"
-actix-service = "2.0.2"
-
+tower-http = { version = "0.3.4", features = ["trace", "fs"] }
+axum-macros = "0.3.0"
+axum-extra = { version = "0.4.1", features = ["spa"] }
+clap = { version = "4.0.27", features = ["derive"] }
+yew = { git = "https://github.com/yewstack/yew/", features = ["ssr"] }
+axum = "0.6.0"
+hyper = { version = "0.14.23", features = ["full"] }
+tokio = { version = "1.22.0", features = ["full"] }
+tower = "0.4.13"
 anyhow = "1.0.66"
 env_logger = "0.9.1"
-futures-util = "0.3.25"
 once_cell = "1.16.0"
 dotenv = "0.15.0"
+
 
