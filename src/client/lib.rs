@@ -26,6 +26,7 @@ fn secure() -> Html {
     html! {
         <div>
             <h1>{ "Secure" }</h1>
+            <Map/>
             <button class="btn-blue w-full" {onclick}>{ "Go Home" }</button>
         </div>
     }

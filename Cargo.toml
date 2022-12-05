@@ -31,6 +31,7 @@ yew-router = { git = "https://github.com/yewstack/yew.git" }
 yew = { git = "https://github.com/yewstack/yew/", features = ["csr", "hydration"] }
 wasm-bindgen-futures = "0.4"
 wasm-logger = "0.2"
+wasm-bindgen = "0.2.83"
 
 
 # backend dependencies

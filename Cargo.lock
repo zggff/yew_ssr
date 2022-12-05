@@ -1631,6 +1631,7 @@ dependencies = [
  "tokio",
  "tower",
  "tower-http",
+ "wasm-bindgen",
  "wasm-bindgen-futures",
  "wasm-logger",
  "yew",
